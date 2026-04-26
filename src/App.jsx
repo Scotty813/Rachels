@@ -459,7 +459,7 @@ function App() {
         </div>
         <p>
           Whether you're stopping in after work, meeting friends for pool, or
-          looking for a late-night Tampa bar with food and games,
+          looking for a late-night Tampa bar with food and games,{" "}
           <span className="brand-name">Rachel&apos;s</span> is ready for you.
         </p>
       </section>
