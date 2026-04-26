@@ -231,52 +231,26 @@ h2 {
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-auto-flow: dense;
-  gap: 14px;
+  column-count: 3;
+  column-gap: 14px;
 }
 
 .gallery-card {
   position: relative;
-  min-height: 240px;
-  grid-column: span 2;
-  aspect-ratio: 4 / 3;
-  margin: 0;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 14px;
   overflow: hidden;
   border: 1px solid rgba(255, 248, 232, 0.14);
   border-radius: 8px;
   background: rgba(255, 248, 232, 0.08);
-}
-
-.gallery-card--feature {
-  grid-column: span 3;
-  grid-row: span 2;
-  aspect-ratio: 16 / 11;
-}
-
-.gallery-card--wide {
-  grid-column: span 3;
-  aspect-ratio: 16 / 9;
-}
-
-.gallery-card--portrait {
-  aspect-ratio: 3 / 4;
+  break-inside: avoid;
 }
 
 .gallery-card img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.gallery-card--contain img {
-  object-fit: contain;
-  background: #0d0907;
-}
-
-.gallery-card--feature img {
-  object-position: center 42%;
+  height: auto;
 }
 
 .gallery-card figcaption {
@@ -677,17 +651,7 @@ blockquote p {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .gallery-card,
-  .gallery-card--feature,
-  .gallery-card--wide,
-  .gallery-card--portrait {
-    grid-column: span 1;
-    grid-row: span 1;
-    min-height: 220px;
-    aspect-ratio: 4 / 3;
+    column-count: 2;
   }
 
   .daily-specials-grid {
@@ -743,14 +707,7 @@ blockquote p {
   }
 
   .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-card,
-  .gallery-card--feature,
-  .gallery-card--wide,
-  .gallery-card--portrait {
-    min-height: 260px;
+    column-count: 1;
   }
 
   .daily-specials-grid {
