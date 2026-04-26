@@ -246,8 +246,8 @@ function App() {
             <a className="button button--secondary" href={mapsUrl}>
               Get Directions
             </a>
-            <a className="button button--ghost" href="#visit">
-              View Hours
+            <a className="button button--ghost" href="#specials">
+              View Specials and Events
             </a>
           </div>
         </div>
