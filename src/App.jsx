@@ -94,7 +94,6 @@ const dailySpecials = [
       "$2 domestic beers",
       "$3 wells until 6 PM",
       "Free pool until 8 PM",
-      "Kitchen is open",
     ],
   },
 ];
@@ -180,7 +179,7 @@ const galleryPhotos = [
     variant: "portrait",
     fit: "contain",
   },
-   {
+  {
     src: poolGroupImg,
     alt: "A group of pool players smiling over a Rachel's Place pool table",
     title: "Cash tournament",
@@ -242,12 +241,8 @@ function App() {
           </h1>
           <p className="hero__lead">
             Your neighborhood spot for food, drinks, pool, and late nights.
-            Located on W Hillsborough Ave in Tampa.
           </p>
           <div className="hero__actions" aria-label="Rachel's Place actions">
-            <a className="button button--primary" href="tel:+18133743957">
-              Call
-            </a>
             <a className="button button--secondary" href={mapsUrl}>
               Get Directions
             </a>
@@ -317,7 +312,6 @@ function App() {
           >
             <div className="specials-heading">
               <p className="eyebrow">Pool</p>
-              <h3 id="pool-events-title">Leagues and cash tournaments</h3>
             </div>
             <div className="activity-list">
               {poolEvents.map((event) => (
@@ -334,21 +328,27 @@ function App() {
                     <h4>{event.title}</h4>
                     <ul>
                       {event.details.map((detail) => (
-                        <li key={typeof detail === "string" ? detail : detail.href}>
-                          {typeof detail === "string" ? (
-                            detail
-                          ) : (
-                            <>
-                              {detail.textBefore}
-                              <a
-                                href={detail.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {detail.linkText}
-                              </a>
-                            </>
-                          )}
+                        <li
+                          key={
+                            typeof detail === "string" ? detail : detail.href
+                          }
+                        >
+                          <span>
+                            {typeof detail === "string" ? (
+                              detail
+                            ) : (
+                              <>
+                                {detail.textBefore}
+                                <a
+                                  href={detail.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {detail.linkText}
+                                </a>
+                              </>
+                            )}
+                          </span>
                         </li>
                       ))}
                     </ul>

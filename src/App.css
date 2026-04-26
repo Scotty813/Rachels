@@ -701,6 +701,10 @@ blockquote p {
   .activity-card {
     grid-template-columns: minmax(180px, 0.36fr) minmax(0, 1fr);
   }
+
+  .activity-card--text-only {
+    grid-template-columns: unset;
+  }
 }
 
 @media (max-width: 620px) {
