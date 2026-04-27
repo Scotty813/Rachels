@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
 :root {
   --cream: #fff6df;
   --paper: #f4ead6;
@@ -7,7 +9,7 @@
   --red: #9f2f24;
   --gold: #d3a45b;
   --pink: #ff4eb8;
-  --brand-font: Impact, 'Arial Black', 'Helvetica Neue Condensed Black', 'Arial Narrow', sans-serif;
+  --brand-font: 'Oswald', Impact, 'Arial Black', 'Helvetica Neue Condensed Black', 'Arial Narrow', sans-serif;
   --heading: var(--brand-font);
   --sans: var(--brand-font);
 
