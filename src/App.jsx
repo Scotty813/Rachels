@@ -256,7 +256,7 @@ function App() {
         </div>
         <div className="hero__facts" aria-label="Quick facts">
           <span>10061 W Hillsborough Ave</span>
-          <span>Open daily until 3 AM</span>
+          <span>Open daily 3 PM - 3 AM</span>
           <span>Pool • Darts • Sports</span>
         </div>
       </section>
@@ -485,7 +485,7 @@ function App() {
           <p className="eyebrow">
             Visit <span className="brand-name">Rachel&apos;s Place</span>
           </p>
-          <h2 id="visit-title">Open daily until 3 AM</h2>
+          <h2 id="visit-title">Open daily 3 PM - 3 AM</h2>
           <address>
             10061 W Hillsborough Ave
             <br />
