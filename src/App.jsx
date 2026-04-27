@@ -367,7 +367,6 @@ function App() {
           >
             <div className="specials-heading">
               <p className="eyebrow">Darts</p>
-              <h3 id="darts-events-title">Monday night darts</h3>
             </div>
             <div className="activity-list">
               {dartsEvents.map((event) => (
