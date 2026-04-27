@@ -1,3 +1,4 @@
+import apaLogoImg from "./assets/apa-logo.jpeg";
 import cashPoolImg from "./assets/event-cash-pool.png";
 import dartsImg from "./assets/event-darts.png";
 import dollarTacosImg from "./assets/gallery-dollar-tacos.png";
@@ -101,6 +102,8 @@ const dailySpecials = [
 const poolEvents = [
   {
     title: "APA League Nights",
+    image: apaLogoImg,
+    alt: "APA poolplayers.com logo",
     details: [
       "Monday night 9-ball",
       "Wednesday 8-ball",
