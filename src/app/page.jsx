@@ -1,21 +1,29 @@
-import apaLogoImg from "./assets/apa-logo.jpeg";
-import cashPoolImg from "./assets/event-cash-pool.png";
-import dartsImg from "./assets/event-darts.png";
-import dollarTacosImg from "./assets/gallery-dollar-tacos.png";
-import espressoMartinisImg from "./assets/gallery-espresso-martinis.png";
-import rachelsSelfieImg from "./assets/gallery-rachels-selfie.png";
-import wingsServiceImg from "./assets/gallery-wings-service.png";
-import barFriendsImg from "./assets/rachels-bar-friends.webp";
-import exteriorImg from "./assets/rachels-exterior.webp";
-import poolGroupImg from "./assets/rachels-pool-group.jpg";
-import heroImg from "./assets/rachels-pool-room.webp";
-import teamPoolImg from "./assets/rachels-team-pool.jpg";
-import fridaySpecialImg from "./assets/special-friday.png";
-import mondaySpecialImg from "./assets/special-monday.png";
-import sundaySpecialImg from "./assets/special-sunday.png";
-import thursdaySpecialImg from "./assets/special-thursday.png";
-import tuesdaySpecialImg from "./assets/special-tuesday.png";
-import "./App.css";
+import Image from "next/image";
+import apaLogoImg from "../assets/apa-logo.jpeg";
+import cashPoolImg from "../assets/event-cash-pool.png";
+import dartsImg from "../assets/event-darts.png";
+import dollarTacosImg from "../assets/gallery-dollar-tacos.png";
+import espressoMartinisImg from "../assets/gallery-espresso-martinis.png";
+import rachelsSelfieImg from "../assets/gallery-rachels-selfie.png";
+import wingsServiceImg from "../assets/gallery-wings-service.png";
+import barFriendsImg from "../assets/rachels-bar-friends.webp";
+import exteriorImg from "../assets/rachels-exterior.webp";
+import poolGroupImg from "../assets/rachels-pool-group.jpg";
+import heroImg from "../assets/rachels-pool-room.webp";
+import teamPoolImg from "../assets/rachels-team-pool.jpg";
+import fridaySpecialImg from "../assets/special-friday.png";
+import mondaySpecialImg from "../assets/special-monday.png";
+import sundaySpecialImg from "../assets/special-sunday.png";
+import thursdaySpecialImg from "../assets/special-thursday.png";
+import tuesdaySpecialImg from "../assets/special-tuesday.png";
+
+const heroImageSizes = "100vw";
+const specialImageSizes =
+  "(max-width: 620px) 100vw, (max-width: 900px) 50vw, 20vw";
+const activityImageSizes =
+  "(max-width: 620px) 100vw, (max-width: 900px) 36vw, 21vw";
+const galleryImageSizes =
+  "(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw";
 
 const highlights = [
   {
@@ -213,17 +221,20 @@ const hours = [
   ["Sunday", "3 PM - 3 AM"],
 ];
 
-function App() {
+export default function Home() {
   const mapsUrl =
     "https://www.google.com/maps/search/?api=1&query=Rachel%27s%20Place%2010061%20W%20Hillsborough%20Ave%20Tampa%20FL%2033615";
 
   return (
     <main>
       <section className="hero" id="top" aria-labelledby="hero-title">
-        <img
+        <Image
           className="hero__image"
           src={heroImg}
           alt="Rachel's Place pool room with four pool tables, high-top seating, and neon signs"
+          priority
+          loading="eager"
+          sizes={heroImageSizes}
         />
         <div className="hero__overlay" />
         <nav className="topbar" aria-label="Primary navigation">
@@ -292,7 +303,11 @@ function App() {
             {dailySpecials.map((special) => (
               <article className="special-day-card" key={special.day}>
                 <div className="special-day-card__media">
-                  <img src={special.image} alt={special.alt} loading="lazy" />
+                  <Image
+                    src={special.image}
+                    alt={special.alt}
+                    sizes={specialImageSizes}
+                  />
                 </div>
                 <div className="special-day-card__body">
                   <p>{special.day}</p>
@@ -324,7 +339,11 @@ function App() {
                 >
                   {event.image ? (
                     <div className="activity-card__media">
-                      <img src={event.image} alt={event.alt} loading="lazy" />
+                      <Image
+                        src={event.image}
+                        alt={event.alt}
+                        sizes={activityImageSizes}
+                      />
                     </div>
                   ) : null}
                   <div>
@@ -372,7 +391,11 @@ function App() {
               {dartsEvents.map((event) => (
                 <article className="activity-card" key={event.title}>
                   <div className="activity-card__media">
-                    <img src={event.image} alt={event.alt} loading="lazy" />
+                    <Image
+                      src={event.image}
+                      alt={event.alt}
+                      sizes={activityImageSizes}
+                    />
                   </div>
                   <div>
                     <h4>{event.title}</h4>
@@ -416,7 +439,11 @@ function App() {
               className={`gallery-card${photo.variant ? ` gallery-card--${photo.variant}` : ""}${photo.fit ? ` gallery-card--${photo.fit}` : ""}`}
               key={photo.title}
             >
-              <img src={photo.src} alt={photo.alt} loading="lazy" />
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                sizes={galleryImageSizes}
+              />
               <figcaption>{photo.title}</figcaption>
             </figure>
           ))}
@@ -460,7 +487,7 @@ function App() {
           <h2 id="games-title">Come for a drink. Stay for another game.</h2>
         </div>
         <p>
-          Whether you're stopping in after work, meeting friends for pool, or
+          Whether you&apos;re stopping in after work, meeting friends for pool, or
           looking for a late-night Tampa bar with food and games,{" "}
           <span className="brand-name">Rachel&apos;s</span> is ready for you.
         </p>
@@ -530,5 +557,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
