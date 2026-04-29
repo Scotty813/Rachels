@@ -301,182 +301,96 @@ export default function Home() {
   ];
 
   return (
-    <main>
-      <section className="hero" id="top" aria-labelledby="hero-title">
-        <Image
-          className="hero__image"
-          src={heroImg}
-          alt="Rachel's Place pool room with four pool tables, high-top seating, and neon signs"
-          priority
-          loading="eager"
-          sizes={heroImageSizes}
-        />
-        <div className="hero__overlay" />
-        <nav className="topbar" aria-label="Primary navigation">
-          <a className="brand" href="#top" aria-label="Rachel's Place home">
-            <span className="brand-name">Rachel&apos;s Place</span>
-          </a>
-          <div className="topbar__links">
-            <a href="#specials">Specials</a>
-            <a href="#food">Food</a>
-            <a href="#games">Games</a>
-            <a href="#visit">Visit</a>
-          </div>
-        </nav>
-        <div className="hero__content">
-          <p className="eyebrow">Tampa neighborhood bar & grill</p>
-          <h1 id="hero-title">
-            <span className="brand-name">Rachel&apos;s Place</span>
-          </h1>
-          <p className="hero__lead">
-            Your neighborhood spot for food, drinks, pool, and late nights.
-          </p>
-          <div className="hero__actions" aria-label="Rachel's Place actions">
-            <a className="button button--secondary" href={mapsUrl}>
-              Get Directions
+    <>
+      <main>
+        <section className="hero" id="top" aria-labelledby="hero-title">
+          <Image
+            className="hero__image"
+            src={heroImg}
+            alt="Rachel's Place pool room with four pool tables, high-top seating, and neon signs"
+            priority
+            loading="eager"
+            sizes={heroImageSizes}
+          />
+          <div className="hero__overlay" />
+          <nav className="topbar" aria-label="Primary navigation">
+            <a className="brand" href="#top" aria-label="Rachel's Place home">
+              <span className="brand-name">Rachel&apos;s Place</span>
             </a>
-            <a className="button button--ghost" href="#specials">
-              View Specials and Events
-            </a>
+            <div className="topbar__links">
+              <a href="#specials">Specials</a>
+              <a href="#food">Food</a>
+              <a href="#games">Games</a>
+              <a href="#visit">Visit</a>
+            </div>
+          </nav>
+          <div className="hero__content">
+            <p className="eyebrow">Tampa neighborhood bar & grill</p>
+            <h1 id="hero-title">
+              <span className="brand-name">Rachel&apos;s Place</span>
+            </h1>
+            <p className="hero__lead">
+              Your neighborhood spot for food, drinks, pool, and late nights.
+            </p>
+            <div className="hero__actions" aria-label="Rachel's Place actions">
+              <a className="button button--secondary" href={mapsUrl}>
+                Get Directions
+              </a>
+              <a className="button button--ghost" href="#specials">
+                View Specials and Events
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="hero__facts" aria-label="Quick facts">
-          <span>10061 W Hillsborough Ave</span>
-          <span>Open daily 3 PM - 3 AM</span>
-          <span>Pool • Darts • Sports</span>
-        </div>
-      </section>
+          <div className="hero__facts" aria-label="Quick facts">
+            <span>10061 W Hillsborough Ave</span>
+            <span>Open daily 3 PM - 3 AM</span>
+            <span>Pool • Darts • Sports</span>
+          </div>
+        </section>
 
-      <section
-        className="events-specials"
-        id="specials"
-        aria-labelledby="specials-title"
-      >
-        <div className="events__intro">
-          <div>
-            <p className="eyebrow">Events & specials</p>
-            <h2 id="specials-title">
-              What&apos;s happening at{" "}
-              <span className="brand-name">Rachel&apos;s</span>
-            </h2>
+        <section
+          className="events-specials"
+          id="specials"
+          aria-labelledby="specials-title"
+        >
+          <div className="events__intro">
+            <div>
+              <p className="eyebrow">Events & specials</p>
+              <h2 id="specials-title">
+                What&apos;s happening at{" "}
+                <span className="brand-name">Rachel&apos;s</span>
+              </h2>
+            </div>
+            <p>
+              Happy hour until 6pm, free pool until 8pm, APA league nights, cash
+              tournaments, and darts at 10061 W Hillsborough Ave, Tampa, FL
+              33615.
+            </p>
           </div>
-          <p>
-            Happy hour until 6pm, free pool until 8pm, APA league nights,
-            cash tournaments, and darts at 10061 W Hillsborough Ave, Tampa, FL
-            33615.
-          </p>
-        </div>
 
-        <div className="specials-block">
-          <div className="specials-heading">
-            <p className="eyebrow">Daily specials</p>
-            <h3>Pick your night</h3>
-          </div>
-          <div
-            className="daily-specials-grid"
-            aria-label="Daily specials by day"
-          >
-            {dailySpecials.map((special) => (
-              <article className="special-day-card" key={special.day}>
-                <div className="special-day-card__media">
-                  <Image
-                    src={special.image}
-                    alt={special.alt}
-                    sizes={specialImageSizes}
-                  />
-                </div>
-                <div className="special-day-card__body">
-                  <p>{special.day}</p>
-                  <h4>{special.title}</h4>
-                  <ul>
-                    {special.details.map((detail) => (
-                      <li key={detail}>{detail}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <div className="activity-specials-grid">
-          <section
-            className="activity-panel"
-            aria-labelledby="pool-events-title"
-          >
+          <div className="specials-block">
             <div className="specials-heading">
-              <p className="eyebrow">Pool</p>
+              <p className="eyebrow">Daily specials</p>
+              <h3>Pick your night</h3>
             </div>
-            <div className="activity-list">
-              {poolEvents.map((event) => (
-                <article
-                  className={`activity-card${event.image ? "" : " activity-card--text-only"}`}
-                  key={event.title}
-                >
-                  {event.image ? (
-                    <div className="activity-card__media">
-                      <Image
-                        src={event.image}
-                        alt={event.alt}
-                        sizes={activityImageSizes}
-                      />
-                    </div>
-                  ) : null}
-                  <div>
-                    <h4>{event.title}</h4>
-                    <ul>
-                      {event.details.map((detail) => (
-                        <li
-                          key={
-                            typeof detail === "string" ? detail : detail.href
-                          }
-                        >
-                          <span>
-                            {typeof detail === "string" ? (
-                              detail
-                            ) : (
-                              <>
-                                {detail.textBefore}
-                                <a
-                                  href={detail.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  {detail.linkText}
-                                </a>
-                              </>
-                            )}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section
-            className="activity-panel"
-            aria-labelledby="darts-events-title"
-          >
-            <div className="specials-heading">
-              <p className="eyebrow">Darts</p>
-            </div>
-            <div className="activity-list">
-              {dartsEvents.map((event) => (
-                <article className="activity-card" key={event.title}>
-                  <div className="activity-card__media">
+            <div
+              className="daily-specials-grid"
+              aria-label="Daily specials by day"
+            >
+              {dailySpecials.map((special) => (
+                <article className="special-day-card" key={special.day}>
+                  <div className="special-day-card__media">
                     <Image
-                      src={event.image}
-                      alt={event.alt}
-                      sizes={activityImageSizes}
+                      src={special.image}
+                      alt={special.alt}
+                      sizes={specialImageSizes}
                     />
                   </div>
-                  <div>
-                    <h4>{event.title}</h4>
+                  <div className="special-day-card__body">
+                    <p>{special.day}</p>
+                    <h4>{special.title}</h4>
                     <ul>
-                      {event.details.map((detail) => (
+                      {special.details.map((detail) => (
                         <li key={detail}>{detail}</li>
                       ))}
                     </ul>
@@ -484,159 +398,252 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </section>
-        </div>
-      </section>
-
-      <section className="intro" aria-labelledby="intro-title">
-        <div>
-          <p className="eyebrow">Why locals go</p>
-          <h2 id="intro-title">
-            A Tampa spot for great drinks and familiar energy
-          </h2>
-        </div>
-        <p>
-          <span className="brand-name">Rachel&apos;s Place</span> gives locals
-          an easy place to meet up, play a few games, catch up over drinks,
-          and stay late without the downtown hassle.
-        </p>
-      </section>
-
-      <section className="photo-gallery" aria-labelledby="gallery-title">
-        <div className="gallery__intro">
-          <p className="eyebrow">Inside the room</p>
-          <h2 id="gallery-title">
-            A look at <span className="brand-name">Rachel&apos;s Place</span>
-          </h2>
-        </div>
-        <div
-          className="gallery-grid"
-          aria-label="Rachel's Place photo gallery"
-        >
-          {galleryPhotos.map((photo) => (
-            <figure
-              className={`gallery-card${photo.variant ? ` gallery-card--${photo.variant}` : ""}${photo.fit ? ` gallery-card--${photo.fit}` : ""}`}
-              key={photo.title}
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                sizes={galleryImageSizes}
-              />
-              <figcaption>{photo.title}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-
-      <section
-        className="highlight-grid"
-        aria-label="Rachel's Place highlights"
-      >
-        {highlights.map((item) => (
-          <article className="highlight" key={item.title}>
-            <p className="eyebrow">{item.kicker}</p>
-            <h2>{item.title}</h2>
-            <p>{item.body}</p>
-          </article>
-        ))}
-      </section>
-
-      <section
-        className="split-section"
-        id="food"
-        aria-labelledby="food-title"
-      >
-        <div className="section-copy">
-          <p className="eyebrow">Food & drinks</p>
-          <h2 id="food-title">Cold drinks and tasty bar bites</h2>
-          <p>
-            Grab wings, empanadas, pot stickers, burgers, sandwiches, and a
-            cold beer or cocktail while you watch the game, shoot pool, or
-            settle in with friends. It is casual, quick, and exactly what you
-            want on a late night.
-          </p>
-        </div>
-        <div className="menu-list" aria-label="Menu highlights">
-          {menuItems.map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
-      </section>
-
-      <section className="games-band" id="games" aria-labelledby="games-title">
-        <div>
-          <p className="eyebrow">Pool, darts & sports</p>
-          <h2 id="games-title">Come for a drink. Stay for another game.</h2>
-        </div>
-        <p>
-          Whether you&apos;re stopping in after work, meeting friends for pool,
-          or looking for a late-night Tampa bar with food and games,{" "}
-          <span className="brand-name">Rachel&apos;s</span> is ready for you.
-        </p>
-      </section>
-
-      <section className="social-proof" aria-labelledby="reviews-title">
-        <div className="section-copy">
-          <p className="eyebrow">Local reputation</p>
-          <h2 id="reviews-title">A place people come back to</h2>
-        </div>
-        <div className="quote-grid">
-          {reviews.map((review) => (
-            <blockquote key={review}>
-              <p>{review}</p>
-            </blockquote>
-          ))}
-        </div>
-      </section>
-
-      <section className="visit" id="visit" aria-labelledby="visit-title">
-        <div className="visit__copy">
-          <p className="eyebrow">
-            Visit <span className="brand-name">Rachel&apos;s Place</span>
-          </p>
-          <h2 id="visit-title">Open daily 3 PM - 3 AM</h2>
-          <address>
-            10061 W Hillsborough Ave
-            <br />
-            Tampa, FL 33615
-          </address>
-          <a className="phone-link" href="tel:+18133743957">
-            (813) 374-3957
-          </a>
-          <div className="visit__actions">
-            <a className="button button--primary" href="tel:+18133743957">
-              Call Now
-            </a>
-            <a className="button button--secondary" href={mapsUrl}>
-              Directions
-            </a>
-            <a
-              className="button button--ghost"
-              href="https://www.instagram.com/rachels_place10061/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
           </div>
-        </div>
-        <div className="hours-card" aria-label="Hours">
-          <h3>Hours</h3>
-          <dl>
-            {hours.map(([day, time]) => (
-              <div key={day}>
-                <dt>{day}</dt>
-                <dd>{time}</dd>
+
+          <div className="activity-specials-grid">
+            <section
+              className="activity-panel"
+              aria-labelledby="pool-events-title"
+            >
+              <div className="specials-heading">
+                <p className="eyebrow">Pool</p>
               </div>
-            ))}
-          </dl>
+              <div className="activity-list">
+                {poolEvents.map((event) => (
+                  <article
+                    className={`activity-card${event.image ? "" : " activity-card--text-only"}`}
+                    key={event.title}
+                  >
+                    {event.image ? (
+                      <div className="activity-card__media">
+                        <Image
+                          src={event.image}
+                          alt={event.alt}
+                          sizes={activityImageSizes}
+                        />
+                      </div>
+                    ) : null}
+                    <div>
+                      <h4>{event.title}</h4>
+                      <ul>
+                        {event.details.map((detail) => (
+                          <li
+                            key={
+                              typeof detail === "string" ? detail : detail.href
+                            }
+                          >
+                            <span>
+                              {typeof detail === "string" ? (
+                                detail
+                              ) : (
+                                <>
+                                  {detail.textBefore}
+                                  <a
+                                    href={detail.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {detail.linkText}
+                                  </a>
+                                </>
+                              )}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section
+              className="activity-panel"
+              aria-labelledby="darts-events-title"
+            >
+              <div className="specials-heading">
+                <p className="eyebrow">Darts</p>
+              </div>
+              <div className="activity-list">
+                {dartsEvents.map((event) => (
+                  <article className="activity-card" key={event.title}>
+                    <div className="activity-card__media">
+                      <Image
+                        src={event.image}
+                        alt={event.alt}
+                        sizes={activityImageSizes}
+                      />
+                    </div>
+                    <div>
+                      <h4>{event.title}</h4>
+                      <ul>
+                        {event.details.map((detail) => (
+                          <li key={detail}>{detail}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section className="intro" aria-labelledby="intro-title">
+          <div>
+            <p className="eyebrow">Why locals go</p>
+            <h2 id="intro-title">
+              A Tampa spot for great drinks and familiar energy
+            </h2>
+          </div>
           <p>
-            Free parking, wheelchair-accessible entry, dine-in, takeout, bar
-            games, sports, beer, cocktails, and late-night food.
+            <span className="brand-name">Rachel&apos;s Place</span> gives locals
+            an easy place to meet up, play a few games, catch up over drinks,
+            and stay late without the downtown hassle.
           </p>
-        </div>
-      </section>
+        </section>
+
+        <section className="photo-gallery" aria-labelledby="gallery-title">
+          <div className="gallery__intro">
+            <p className="eyebrow">Inside the room</p>
+            <h2 id="gallery-title">
+              A look at <span className="brand-name">Rachel&apos;s Place</span>
+            </h2>
+          </div>
+          <div
+            className="gallery-grid"
+            aria-label="Rachel's Place photo gallery"
+          >
+            {galleryPhotos.map((photo) => (
+              <figure
+                className={`gallery-card${photo.variant ? ` gallery-card--${photo.variant}` : ""}${photo.fit ? ` gallery-card--${photo.fit}` : ""}`}
+                key={photo.title}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  sizes={galleryImageSizes}
+                />
+                <figcaption>{photo.title}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section
+          className="highlight-grid"
+          aria-label="Rachel's Place highlights"
+        >
+          {highlights.map((item) => (
+            <article className="highlight" key={item.title}>
+              <p className="eyebrow">{item.kicker}</p>
+              <h2>{item.title}</h2>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </section>
+
+        <section
+          className="split-section"
+          id="food"
+          aria-labelledby="food-title"
+        >
+          <div className="section-copy">
+            <p className="eyebrow">Food & drinks</p>
+            <h2 id="food-title">Cold drinks and tasty bar bites</h2>
+            <p>
+              Grab wings, empanadas, pot stickers, burgers, sandwiches, and a
+              cold beer or cocktail while you watch the game, shoot pool, or
+              settle in with friends. It is casual, quick, and exactly what you
+              want on a late night.
+            </p>
+          </div>
+          <div className="menu-list" aria-label="Menu highlights">
+            {menuItems.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+        </section>
+
+        <section
+          className="games-band"
+          id="games"
+          aria-labelledby="games-title"
+        >
+          <div>
+            <p className="eyebrow">Pool, darts & sports</p>
+            <h2 id="games-title">Come for a drink. Stay for another game.</h2>
+          </div>
+          <p>
+            Whether you&apos;re stopping in after work, meeting friends for
+            pool, or looking for a late-night Tampa bar with food and games,{" "}
+            <span className="brand-name">Rachel&apos;s</span> is ready for you.
+          </p>
+        </section>
+
+        <section className="social-proof" aria-labelledby="reviews-title">
+          <div className="section-copy">
+            <p className="eyebrow">Local reputation</p>
+            <h2 id="reviews-title">A place people come back to</h2>
+          </div>
+          <div className="quote-grid">
+            {reviews.map((review) => (
+              <blockquote key={review}>
+                <p>{review}</p>
+              </blockquote>
+            ))}
+          </div>
+        </section>
+
+        <section className="visit" id="visit" aria-labelledby="visit-title">
+          <div className="visit__copy">
+            <p className="eyebrow">
+              Visit <span className="brand-name">Rachel&apos;s Place</span>
+            </p>
+            <h2 id="visit-title">Open daily 3 PM - 3 AM</h2>
+            <address>
+              10061 W Hillsborough Ave
+              <br />
+              Tampa, FL 33615
+            </address>
+            <a className="phone-link" href="tel:+18133743957">
+              (813) 374-3957
+            </a>
+            <div className="visit__actions">
+              <a className="button button--primary" href="tel:+18133743957">
+                Call Now
+              </a>
+              <a className="button button--secondary" href={mapsUrl}>
+                Directions
+              </a>
+              <a
+                className="button button--ghost"
+                href="https://www.instagram.com/rachels_place10061/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+          <div className="hours-card" aria-label="Hours">
+            <h3>Hours</h3>
+            <dl>
+              {hours.map(([day, time]) => (
+                <div key={day}>
+                  <dt>{day}</dt>
+                  <dd>{time}</dd>
+                </div>
+              ))}
+            </dl>
+            <p>
+              Free parking, wheelchair-accessible entry, dine-in, takeout, bar
+              games, sports, beer, cocktails, and late-night food.
+            </p>
+          </div>
+        </section>
+      </main>
+
       <footer className="site-footer" aria-label="Site footer">
         <div className="site-footer__brand">
           <a className="brand" href="#top" aria-label="Rachel's Place home">
@@ -675,6 +682,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </main>
+    </>
   );
 }
