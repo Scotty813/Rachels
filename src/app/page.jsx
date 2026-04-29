@@ -221,9 +221,84 @@ const hours = [
   ["Sunday", "3 PM - 3 AM"],
 ];
 
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z"
+      />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"
+      />
+      <path fill="currentColor" d="M17.5 6.5h.01v.01h-.01z" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M14.2 8.9V7.2c0-.8.6-1 1.1-1h1.9V3h-2.8c-3.1 0-4.3 1.9-4.3 4.1v1.8H7.8v3.4h2.3V21h4.1v-8.7h2.8l.5-3.4h-3.3Z"
+      />
+    </svg>
+  );
+}
+
+function GoogleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M21.6 12.23c0-.73-.07-1.43-.19-2.1H12v3.97h5.38a4.6 4.6 0 0 1-2 3.02v2.58h3.24c1.9-1.75 2.98-4.32 2.98-7.47Z"
+      />
+      <path
+        fill="currentColor"
+        d="M12 22c2.7 0 4.97-.9 6.62-2.42l-3.24-2.58c-.9.6-2.05.96-3.38.96-2.61 0-4.82-1.76-5.61-4.13H3.04v2.66A10 10 0 0 0 12 22Z"
+      />
+      <path
+        fill="currentColor"
+        d="M6.39 13.83a6 6 0 0 1 0-3.66V7.51H3.04a10 10 0 0 0 0 8.98l3.35-2.66Z"
+      />
+      <path
+        fill="currentColor"
+        d="M12 6.04c1.47 0 2.79.51 3.82 1.5l2.87-2.87A9.6 9.6 0 0 0 12 2a10 10 0 0 0-8.96 5.51l3.35 2.66C7.18 7.8 9.39 6.04 12 6.04Z"
+      />
+    </svg>
+  );
+}
+
 export default function Home() {
   const mapsUrl =
     "https://www.google.com/maps/search/?api=1&query=Rachel%27s%20Place%2010061%20W%20Hillsborough%20Ave%20Tampa%20FL%2033615";
+  const socialLinks = [
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/rachels_place10061/",
+      icon: <InstagramIcon />,
+    },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/rachel.place.37",
+      icon: <FacebookIcon />,
+    },
+    {
+      label: "Google Maps",
+      href: mapsUrl,
+      icon: <GoogleIcon />,
+    },
+  ];
 
   return (
     <main>
@@ -286,8 +361,9 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Happy hour until 6pm, free pool until 8pm, APA league nights, cash
-            tournaments, and darts at 10061 W Hillsborough Ave, Tampa, FL 33615.
+            Happy hour until 6pm, free pool until 8pm, APA league nights,
+            cash tournaments, and darts at 10061 W Hillsborough Ave, Tampa, FL
+            33615.
           </p>
         </div>
 
@@ -421,8 +497,8 @@ export default function Home() {
         </div>
         <p>
           <span className="brand-name">Rachel&apos;s Place</span> gives locals
-          an easy place to meet up, play a few games, catch up over drinks, and
-          stay late without the downtown hassle.
+          an easy place to meet up, play a few games, catch up over drinks,
+          and stay late without the downtown hassle.
         </p>
       </section>
 
@@ -433,7 +509,10 @@ export default function Home() {
             A look at <span className="brand-name">Rachel&apos;s Place</span>
           </h2>
         </div>
-        <div className="gallery-grid" aria-label="Rachel's Place photo gallery">
+        <div
+          className="gallery-grid"
+          aria-label="Rachel's Place photo gallery"
+        >
           {galleryPhotos.map((photo) => (
             <figure
               className={`gallery-card${photo.variant ? ` gallery-card--${photo.variant}` : ""}${photo.fit ? ` gallery-card--${photo.fit}` : ""}`}
@@ -463,15 +542,19 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="split-section" id="food" aria-labelledby="food-title">
+      <section
+        className="split-section"
+        id="food"
+        aria-labelledby="food-title"
+      >
         <div className="section-copy">
           <p className="eyebrow">Food & drinks</p>
           <h2 id="food-title">Cold drinks and tasty bar bites</h2>
           <p>
-            Grab wings, empanadas, pot stickers, burgers, sandwiches, and a cold
-            beer or cocktail while you watch the game, shoot pool, or settle in
-            with friends. It is casual, quick, and exactly what you want on a
-            late night.
+            Grab wings, empanadas, pot stickers, burgers, sandwiches, and a
+            cold beer or cocktail while you watch the game, shoot pool, or
+            settle in with friends. It is casual, quick, and exactly what you
+            want on a late night.
           </p>
         </div>
         <div className="menu-list" aria-label="Menu highlights">
@@ -487,8 +570,8 @@ export default function Home() {
           <h2 id="games-title">Come for a drink. Stay for another game.</h2>
         </div>
         <p>
-          Whether you&apos;re stopping in after work, meeting friends for pool, or
-          looking for a late-night Tampa bar with food and games,{" "}
+          Whether you&apos;re stopping in after work, meeting friends for pool,
+          or looking for a late-night Tampa bar with food and games,{" "}
           <span className="brand-name">Rachel&apos;s</span> is ready for you.
         </p>
       </section>
@@ -554,6 +637,44 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <footer className="site-footer" aria-label="Site footer">
+        <div className="site-footer__brand">
+          <a className="brand" href="#top" aria-label="Rachel's Place home">
+            <span className="brand-name">Rachel&apos;s Place</span>
+          </a>
+          <address>
+            10061 W Hillsborough Ave
+            <br />
+            Tampa, FL 33615
+          </address>
+          <a className="site-footer__phone" href="tel:+18133743957">
+            (813) 374-3957
+          </a>
+        </div>
+
+        <div className="site-footer__links">
+          <nav className="site-footer__nav" aria-label="Footer navigation">
+            <a href="#specials">Specials</a>
+            <a href="#food">Food</a>
+            <a href="#games">Games</a>
+            <a href="#visit">Visit</a>
+          </nav>
+          <div className="site-footer__socials" aria-label="Social links">
+            {socialLinks.map((link) => (
+              <a
+                className="site-footer__social"
+                href={link.href}
+                key={link.label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.icon}
+                <span className="sr-only">{link.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
