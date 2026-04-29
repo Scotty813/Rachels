@@ -1,4 +1,5 @@
 import { Oswald } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "../index.css";
 import "../App.css";
 
@@ -128,6 +129,7 @@ export default function RootLayout({ children }) {
           }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
