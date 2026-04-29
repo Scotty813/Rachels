@@ -786,6 +786,13 @@ blockquote p {
     bottom: 20px;
   }
 
+  .hero h1 .brand-name {
+    text-shadow:
+      0 0 2px #fff,
+      0 0 2px #ff4eb8,
+      0 0 14px #ff4eb8;
+  }
+
   .highlight-grid {
     grid-template-columns: 1fr;
   }
